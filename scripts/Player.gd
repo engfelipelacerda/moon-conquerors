@@ -29,9 +29,13 @@ func _physics_process(delta):
 
 	# Tiro automático
 	fire_timer -= delta
-	if fire_timer <= 0.0:
-		fire_timer = FIRE_RATE
-		shoot()
+	if Input.is_action_pressed("shoot"):
+		if fire_timer <= 0.0:
+			fire_timer = FIRE_RATE
+			shoot()
+
+func _input(event: InputEvent) -> void:
+	pass
 
 func shoot():
 	var bullet = bullet_scene.instantiate()
