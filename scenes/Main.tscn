@@ -5,6 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
 size = Vector2(1152, 50)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
+size = Vector2(2, 432.16248)
+
 [node name="Main" type="Node2D" unique_id=817526930]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2141575793]
@@ -23,3 +26,13 @@ position = Vector2(576, 623)
 shape = SubResource("RectangleShape2D_qnwvq")
 
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
+
+[node name="Colisão Invisível" type="StaticBody2D" parent="." unique_id=419536920]
+
+[node name="Parede Direita" type="CollisionShape2D" parent="Colisão Invisível" unique_id=1517080303]
+position = Vector2(1153, 383)
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="Parede Esquerda" type="CollisionShape2D" parent="Colisão Invisível" unique_id=316849795]
+position = Vector2(0, 383.08124)
+shape = SubResource("RectangleShape2D_elqb8")
