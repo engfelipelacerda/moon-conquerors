@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://cou51dfsfd44o"]
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://58knxflb8cyr" path="res://scripts/Enemy.gd" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://scripts/lunar.jpg" id="3_0bbpv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
 size = Vector2(1152, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
 size = Vector2(2, 432.16248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
+size = Vector2(54, 48)
 
 [node name="Main" type="Node2D" unique_id=817526930]
 
@@ -28,6 +33,7 @@ shape = SubResource("RectangleShape2D_qnwvq")
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
 
 [node name="Colisão Invisível" type="StaticBody2D" parent="." unique_id=419536920]
+disable_mode = 2
 
 [node name="Parede Direita" type="CollisionShape2D" parent="Colisão Invisível" unique_id=1517080303]
 position = Vector2(1153, 383)
@@ -36,3 +42,44 @@ shape = SubResource("RectangleShape2D_elqb8")
 [node name="Parede Esquerda" type="CollisionShape2D" parent="Colisão Invisível" unique_id=316849795]
 position = Vector2(0, 383.08124)
 shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="Enemy" type="CharacterBody2D" parent="." unique_id=2052621665]
+position = Vector2(596, 246)
+script = ExtResource("2_rvslj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=997954599]
+position = Vector2(7, 4)
+shape = SubResource("RectangleShape2D_rvslj")
+
+[node name="ColorRect" type="ColorRect" parent="Enemy" unique_id=1725564366]
+offset_left = -20.0
+offset_top = -21.0
+offset_right = 20.0
+offset_bottom = 19.0
+scale = Vector2(1.3639168, 1.2398183)
+color = Color(0.7372549, 0, 0.08235294, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="Enemy" unique_id=1447477160]
+offset_left = 7.0000005
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 44.0
+rotation = 1.5707964
+scale = Vector2(1, 0.056418464)
+color = Color(0.27984488, 0.21717095, 0.24610353, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Enemy" unique_id=1686586706]
+offset_left = 6.9999995
+offset_top = 3.9999998
+offset_right = 47.0
+offset_bottom = 44.0
+scale = Vector2(1, 0.056418464)
+color = Color(0, 0.7009996, 0.78480196, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Enemy" unique_id=1455385398]
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 46.0
+offset_bottom = 46.0
+scale = Vector2(0.7599902, 0.68)
+texture = ExtResource("3_0bbpv")
