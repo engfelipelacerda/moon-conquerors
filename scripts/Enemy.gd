@@ -3,7 +3,10 @@ extends CharacterBody2D
 @export var speed = 30;
 @export var speed_rotation = 2;
 @export var stopping_distance = 280;
+@export var hovering_height = 65;
+
 @onready var player = $"../Player";
+
 var angle = 0;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +20,8 @@ func _process(delta: float) -> void:
 
 func hover(delta:float):
 	var direction = (player.global_position - global_position).normalized()
+	#Ground is at 570
+	var ground_distance = abs(global_position.y - 570)
 	var target_angle = rad_to_deg(direction.angle())
 	var distance = global_position.distance_to(player.global_position)
 	var target_velocity = direction * speed
@@ -31,6 +36,10 @@ func hover(delta:float):
 		angle = 0
 	
 	velocity = velocity.lerp(target_velocity, 0.1)
+
+	if ground_distance < hovering_height:
+		velocity.y = 0
+	
 	move_and_slide()
 	rotation = lerp_angle(rotation,angle,speed_rotation*delta)
 	

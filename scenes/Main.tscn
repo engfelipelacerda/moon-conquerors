@@ -46,6 +46,7 @@ shape = SubResource("RectangleShape2D_elqb8")
 [node name="Enemy" type="CharacterBody2D" parent="." unique_id=2052621665]
 position = Vector2(596, 246)
 script = ExtResource("2_rvslj")
+speed = 200
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" unique_id=997954599]
 position = Vector2(7, 4)
