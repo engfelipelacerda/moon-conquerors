@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 const GRAVITY = 1200.0
@@ -27,12 +26,11 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	# Tiro automático
+	# Atira automaticamente
 	fire_timer -= delta
-	if Input.is_action_pressed("shoot"):
-		if fire_timer <= 0.0:
-			fire_timer = FIRE_RATE
-			shoot()
+	if fire_timer <= 0.0:
+		fire_timer = FIRE_RATE
+		shoot()
 
 func _input(event: InputEvent) -> void:
 	pass
