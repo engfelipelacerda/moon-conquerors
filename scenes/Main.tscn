@@ -8,12 +8,17 @@ size = Vector2(1152, 50)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
 size = Vector2(2, 432.16248)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
+size = Vector2(100, 100)
+
 [node name="Main" type="Node2D" unique_id=817526930]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2141575793]
 position = Vector2(576, 324)
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1348934330]
+collision_layer = 16
+collision_mask = 0
 
 [node name="ColorRect" type="ColorRect" parent="Floor" unique_id=816987011]
 offset_top = 598.0
@@ -36,3 +41,18 @@ shape = SubResource("RectangleShape2D_elqb8")
 [node name="Parede Esquerda" type="CollisionShape2D" parent="Colisão Invisível" unique_id=316849795]
 position = Vector2(0, 383.08124)
 shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="Target" type="StaticBody2D" parent="." unique_id=917376948]
+collision_layer = 2
+collision_mask = 21
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=2036889198]
+position = Vector2(487, 273)
+shape = SubResource("RectangleShape2D_rvslj")
+
+[node name="ColorRect" type="ColorRect" parent="Target" unique_id=2145555227]
+offset_left = 442.0
+offset_top = 233.0
+offset_right = 532.0
+offset_bottom = 308.0
+color = Color(0.87741095, 8.085966e-06, 0.5671025, 1)

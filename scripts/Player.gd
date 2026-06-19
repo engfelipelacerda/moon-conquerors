@@ -3,6 +3,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 const GRAVITY = 1200.0
 const FIRE_RATE = 0.15
+@onready var muzzle = $Muzzle
 
 var bullet_scene = preload("res://scenes/Bullet.tscn")
 var fire_timer = 0.0
@@ -38,9 +39,8 @@ func _input(event: InputEvent) -> void:
 func shoot():
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
-	bullet.global_position = global_position
-
-	# Direção para o mouse
 	var mouse_pos = get_global_mouse_position()
-	bullet.direction = (mouse_pos - global_position).normalized()
-	bullet.rotation = bullet.direction.angle()
+	bullet.global_position = muzzle.global_position
+	var dir = (mouse_pos - muzzle.global_position).normalized()
+	bullet.direction = dir
+	bullet.rotation = dir.angle()
