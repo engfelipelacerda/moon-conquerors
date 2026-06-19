@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cou51dfsfd44o"]
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://scenes/Player.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://cxnwsh2ap5eg7" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://bijdlicagh0xt" path="res://scenes/Enemy.tscn" id="5_vcsgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
 size = Vector2(1152, 50)
@@ -12,6 +14,7 @@ size = Vector2(2, 432.16248)
 size = Vector2(100, 100)
 
 [node name="Main" type="Node2D" unique_id=817526930]
+script = ExtResource("1_vcsgt")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2141575793]
 position = Vector2(576, 324)
@@ -33,6 +36,7 @@ shape = SubResource("RectangleShape2D_qnwvq")
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
 
 [node name="Colisão Invisível" type="StaticBody2D" parent="." unique_id=419536920]
+disable_mode = 2
 
 [node name="Parede Direita" type="CollisionShape2D" parent="Colisão Invisível" unique_id=1517080303]
 position = Vector2(1153, 383)
@@ -56,3 +60,6 @@ offset_top = 233.0
 offset_right = 532.0
 offset_bottom = 308.0
 color = Color(0.87741095, 8.085966e-06, 0.5671025, 1)
+
+[node name="Enemy" parent="." unique_id=1824610519 instance=ExtResource("5_vcsgt")]
+position = Vector2(676, 259)

@@ -15,6 +15,10 @@ run/main_scene="uid://cou51dfsfd44o"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*uid://cxnwsh2ap5eg7"
+
 [input]
 
 ui_accept={

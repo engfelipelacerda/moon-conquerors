@@ -8,6 +8,9 @@ const FIRE_RATE = 0.15
 var bullet_scene = preload("res://scenes/Bullet.tscn")
 var fire_timer = 0.0
 
+func _ready():
+	Game.player = self
+
 func _physics_process(delta):
 	# Gravidade
 	if not is_on_floor():
