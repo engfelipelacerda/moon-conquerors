@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://obpvb883xxxf" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpr68"]
+radius = 27.0
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1592035946 node_paths=PackedStringArray("enemy_movement")]
 script = ExtResource("1_mpr68")
 enemy_movement = NodePath("enemy-movement")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521729956]
-visible = false
 position = Vector2(7, 4)
 shape = SubResource("CircleShape2D_mpr68")
 

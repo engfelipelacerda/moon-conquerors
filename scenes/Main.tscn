@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cou51dfsfd44o"]
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://scenes/Player.tscn" id="1_elqb8"]
-[ext_resource type="Script" uid="uid://eqxwyox4o8vl" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="Script" uid="uid://cxnwsh2ap5eg7" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="Script" uid="uid://dbqdxcpxibqm3" path="res://scripts/lm_enemy_spawn.gd" id="4_rarhs"]
 [ext_resource type="PackedScene" uid="uid://bijdlicagh0xt" path="res://scenes/Enemy.tscn" id="5_vcsgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
@@ -43,3 +44,7 @@ shape = SubResource("RectangleShape2D_elqb8")
 
 [node name="Enemy" parent="." unique_id=1824610519 instance=ExtResource("5_vcsgt")]
 position = Vector2(676, 259)
+
+[node name="lm_enemy_spawn" type="Node2D" parent="." unique_id=714785751]
+position = Vector2(1153, 0)
+script = ExtResource("4_rarhs")
