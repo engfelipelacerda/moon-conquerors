@@ -12,6 +12,10 @@ var DEFAULT_STOPPING_DISTANCE = 300
 var DEFAULT_SEPARATION_STRENGTH = 2.2
 var DEFAULT_HOVERING_HEIGHT = 250
 
+#=====DEBUG=======
+var debug_floor_repelling_force:Vector2 = Vector2.ZERO
+var debug_player_force:Vector2 = Vector2.ZERO
+var debug_separation_force:Vector2 = Vector2.ZERO
 
 @export var stopping_distance:float = DEFAULT_STOPPING_DISTANCE
 @export var separation_force_strength = DEFAULT_SEPARATION_STRENGTH
@@ -23,14 +27,13 @@ func _ready() -> void:
 	ground_raycast.target_position = Vector2(0,MAX_RANGE_GROUND_RAYCAST)
 
 func move_vector() -> Vector2:
-	floor_repelling_force = Vector2.ZERO
 	steering_force = Vector2.ZERO
 	var enemy_to_player = (global_position - player.global_position)
 	
 	var player_force = Vector2.ZERO
-	if enemy_to_player.length() > stopping_distance:
+	if enemy_to_player.length() > stopping_distance+100:
 		player_force = -enemy_to_player.normalized()
-	elif enemy_to_player.length() < stopping_distance - 100:
+	elif enemy_to_player.length() < stopping_distance:
 		player_force = enemy_to_player.normalized()
 	else:
 		player_force = Vector2.ZERO
@@ -49,22 +52,26 @@ func move_vector() -> Vector2:
 		elif neighbor_distance > (stopping_distance + 50):
 			separation_force = Vector2.ZERO
 	
-	steering_force+=separation_force
+	steering_force+=separation_force.normalized()
 	
 	#Minimum Hovering height
 	var ground_distance = get_ground_distance()
 	if ground_distance < hovering_height:
-		var strength = (hovering_height - ground_distance) / hovering_height
-		floor_repelling_force = Vector2.UP*strength
-	elif ground_distance > (hovering_height + 100):
-		floor_repelling_force = Vector2.ZERO
+		floor_repelling_force = Vector2.UP
+	elif ground_distance > (hovering_height + 180):
+		floor_repelling_force = Vector2.DOWN
 	
 	steering_force = (
 		player_force
-		+floor_repelling_force * 4.0
-		+separation_force * 2.0
+		+floor_repelling_force*0.8
+		+separation_force * 0.5
 		).normalized()
-	
+		
+	debug_floor_repelling_force = floor_repelling_force
+	debug_player_force = player_force
+	debug_separation_force = separation_force
+
+	queue_redraw()
 	return steering_force
 	
 func get_all_neighbors() -> Array:
@@ -78,3 +85,21 @@ func get_ground_distance() -> float:
 
 func hover_angle(steering_force:Vector2) -> float:
 	return deg_to_rad(25.0 * steering_force.x)
+	
+func _draw() -> void:
+	return 
+	draw_line(
+		Vector2.ZERO,
+		debug_floor_repelling_force*50,
+		Color.GREEN,
+		2)
+	draw_line(
+		Vector2.ZERO,
+		debug_player_force*50,
+		Color.RED,
+		2)
+	draw_line(
+		Vector2.ZERO,
+		debug_separation_force*50,
+		Color.BLUE,
+		2)

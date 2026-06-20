@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://scripts/lunar.jpg" id="2_ft8do"]
 [ext_resource type="Script" uid="uid://obpvb883xxxf" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
-size = Vector2(54, 48)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mpr68"]
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1592035946 node_paths=PackedStringArray("enemy_movement")]
 script = ExtResource("1_mpr68")
@@ -14,7 +13,7 @@ enemy_movement = NodePath("enemy-movement")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521729956]
 visible = false
 position = Vector2(7, 4)
-shape = SubResource("RectangleShape2D_rvslj")
+shape = SubResource("CircleShape2D_mpr68")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1796950900]
 offset_left = -20.0
@@ -23,23 +22,6 @@ offset_right = 20.0
 offset_bottom = 19.0
 scale = Vector2(1.3639168, 1.2398183)
 color = Color(0.7372549, 0, 0.08235294, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="." unique_id=624479807]
-offset_left = 7.0000005
-offset_top = 4.0
-offset_right = 47.0
-offset_bottom = 44.0
-rotation = 1.5707964
-scale = Vector2(1, 0.056418464)
-color = Color(0.27984488, 0.21717095, 0.24610353, 1)
-
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=1219787963]
-offset_left = 6.9999995
-offset_top = 3.9999998
-offset_right = 47.0
-offset_bottom = 44.0
-scale = Vector2(1, 0.056418464)
-color = Color(0, 0.7009996, 0.78480196, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1840533772]
 offset_left = -18.0
