@@ -19,8 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://h52013grp4gt" path="res://sprites/alien_walk/6.png" id="13_5dkxs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh0f6"]
-radius = 15.0
-height = 34.0
+radius = 22.0
+height = 50.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7qicf"]
 animations = [{
@@ -94,14 +94,15 @@ collision_mask = 18
 script = ExtResource("1_p0vlq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504036690]
-position = Vector2(0, -30)
+position = Vector2(3, -27)
 shape = SubResource("CapsuleShape2D_eh0f6")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=1408660936]
-position = Vector2(0, -54)
+position = Vector2(4, -56)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=354282861]
-position = Vector2(0, -31)
+position = Vector2(4.0000286, -28.00001)
+scale = Vector2(1.7333317, 1.5249996)
 sprite_frames = SubResource("SpriteFrames_7qicf")
 animation = &"alien_idle"
 autoplay = "alien_idle"

@@ -5,16 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://bijdlicagh0xt" path="res://entities/Enemy.tscn" id="5_vcsgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
-size = Vector2(1152, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
-size = Vector2(2, 432.16248)
+size = Vector2(2817, 50)
 
 [node name="Main" type="Node2D" unique_id=817526930]
 script = ExtResource("1_vcsgt")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2141575793]
-position = Vector2(576, 324)
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=1348934330]
 collision_layer = 16
@@ -22,26 +16,18 @@ collision_mask = 0
 
 [node name="ColorRect" type="ColorRect" parent="Floor" unique_id=816987011]
 offset_top = 598.0
-offset_right = 1152.0
+offset_right = 2817.0
 offset_bottom = 648.0
 color = Color(0.31518266, 0.21170467, 0.037503146, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=345360542]
-position = Vector2(576, 623)
+position = Vector2(1408.5, 623)
 shape = SubResource("RectangleShape2D_qnwvq")
 
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
-
-[node name="Colisão Invisível" type="StaticBody2D" parent="." unique_id=419536920]
-disable_mode = 2
-
-[node name="Parede Direita" type="CollisionShape2D" parent="Colisão Invisível" unique_id=1517080303]
-position = Vector2(1153, 383)
-shape = SubResource("RectangleShape2D_elqb8")
-
-[node name="Parede Esquerda" type="CollisionShape2D" parent="Colisão Invisível" unique_id=316849795]
-position = Vector2(0, 383.08124)
-shape = SubResource("RectangleShape2D_elqb8")
+position = Vector2(987, 543)
 
 [node name="Enemy" parent="." unique_id=1824610519 instance=ExtResource("5_vcsgt")]
 position = Vector2(676, 259)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=208521009]
