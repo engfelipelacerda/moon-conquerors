@@ -1,4 +1,5 @@
 extends CharacterBody2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Constantes de movimentação e combate
 const SPEED = 300.0
@@ -27,12 +28,24 @@ func _physics_process(delta):
 		velocity.y = JUMP_VELOCITY
 
 	# Controla o movimento horizontal
-	if Input.is_action_pressed("ui_left"):
-		velocity.x = -SPEED
-	elif Input.is_action_pressed("ui_right"):
-		velocity.x = SPEED
+	var direction := Input.get_axis("ui_left", "ui_right")
+
+	if direction:
+		velocity.x = direction * SPEED
 	else:
-		velocity.x = 0
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	if is_on_floor():
+		if direction > 0: 
+			animated_sprite_2d.flip_h = true
+			animated_sprite_2d.play("alien_walk")
+		elif direction < 0:
+			animated_sprite_2d.flip_h = false
+			animated_sprite_2d.play("alien_walk")
+		else:
+			animated_sprite_2d.play("alien_idle")
+	else:
+		animated_sprite_2d.play("alien_jump")
 
 	move_and_slide()
 

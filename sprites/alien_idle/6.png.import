@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cayrmfof5v4bq"
-path="res://.godot/imported/6.png-3af26b3d033447d54bd4204a0c6a0c30.ctex"
+path="res://.godot/imported/6.png-b8fc41c8b6af98982623e7b357be2484.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/alien_idle_left/6.png"
-dest_files=["res://.godot/imported/6.png-3af26b3d033447d54bd4204a0c6a0c30.ctex"]
+source_file="res://sprites/alien_idle/6.png"
+dest_files=["res://.godot/imported/6.png-b8fc41c8b6af98982623e7b357be2484.ctex"]
 
 [params]
 

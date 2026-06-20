@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://b54ut8v36ehl0"]
 
 [ext_resource type="Script" uid="uid://ctmri4xmnbuku" path="res://scripts/Player.gd" id="1_p0vlq"]
-[ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle_left/1.png" id="2_25mxy"]
-[ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle_left/2.png" id="3_dv4ir"]
-[ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle_left/3.png" id="4_idcse"]
-[ext_resource type="Texture2D" uid="uid://bgksounfpoxxu" path="res://sprites/alien_idle_left/4.png" id="5_p37y2"]
-[ext_resource type="Texture2D" uid="uid://b34hfpfl1moxu" path="res://sprites/alien_idle_left/5.png" id="6_vkqcq"]
-[ext_resource type="Texture2D" uid="uid://cayrmfof5v4bq" path="res://sprites/alien_idle_left/6.png" id="7_b4uku"]
+[ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle/1.png" id="2_7qicf"]
+[ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle/2.png" id="3_kqo1p"]
+[ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle/3.png" id="4_5q58l"]
+[ext_resource type="Texture2D" uid="uid://bgksounfpoxxu" path="res://sprites/alien_idle/4.png" id="5_n5o1f"]
+[ext_resource type="Texture2D" uid="uid://b34hfpfl1moxu" path="res://sprites/alien_idle/5.png" id="6_i1xi8"]
+[ext_resource type="Texture2D" uid="uid://cayrmfof5v4bq" path="res://sprites/alien_idle/6.png" id="7_5dkxs"]
+[ext_resource type="Texture2D" uid="uid://ixlk8fnp55t4" path="res://sprites/alien_walk/1.png" id="8_7qicf"]
+[ext_resource type="Texture2D" uid="uid://dwjntg7my6th0" path="res://sprites/alien_jump/1.png" id="8_i1xi8"]
+[ext_resource type="Texture2D" uid="uid://bx0h88s8xnvup" path="res://sprites/alien_jump/2.png" id="9_5dkxs"]
+[ext_resource type="Texture2D" uid="uid://b2xbodpv6nkl2" path="res://sprites/alien_walk/2.png" id="9_kqo1p"]
+[ext_resource type="Texture2D" uid="uid://cfy0aoov8jjiq" path="res://sprites/alien_walk/3.png" id="10_5q58l"]
+[ext_resource type="Texture2D" uid="uid://dm3xtcsvx5kx0" path="res://sprites/alien_jump/3.png" id="10_q54cm"]
+[ext_resource type="Texture2D" uid="uid://cl5j4imgt7olo" path="res://sprites/alien_jump/4.png" id="11_732nv"]
+[ext_resource type="Texture2D" uid="uid://drqi6hfgfxk4m" path="res://sprites/alien_walk/4.png" id="11_n5o1f"]
+[ext_resource type="Texture2D" uid="uid://b1ymbstu07yxx" path="res://sprites/alien_walk/5.png" id="12_i1xi8"]
+[ext_resource type="Texture2D" uid="uid://h52013grp4gt" path="res://sprites/alien_walk/6.png" id="13_5dkxs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh0f6"]
 radius = 15.0
@@ -16,31 +26,66 @@ height = 34.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_25mxy")
+"texture": ExtResource("2_7qicf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_dv4ir")
+"texture": ExtResource("3_kqo1p")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_idcse")
+"texture": ExtResource("4_5q58l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_p37y2")
+"texture": ExtResource("5_n5o1f")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_vkqcq")
+"texture": ExtResource("6_i1xi8")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_b4uku")
+"texture": ExtResource("7_5dkxs")
 }],
 "loop": true,
-"name": &"alien_idle_left",
-"speed": 5.0
+"name": &"alien_idle",
+"speed": 10.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_i1xi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5dkxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_q54cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_732nv")
+}],
 "loop": true,
-"name": &"alien_idle_right",
-"speed": 5.0
+"name": &"alien_jump",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7qicf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kqo1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5q58l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_n5o1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_i1xi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_5dkxs")
+}],
+"loop": true,
+"name": &"alien_walk",
+"speed": 10.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=134217823]
@@ -58,4 +103,6 @@ position = Vector2(0, -54)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=354282861]
 position = Vector2(0, -31)
 sprite_frames = SubResource("SpriteFrames_7qicf")
-animation = &"alien_idle_left"
+animation = &"alien_idle"
+autoplay = "alien_idle"
+frame_progress = 0.4680297

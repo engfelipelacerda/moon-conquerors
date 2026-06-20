@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj0j63rc1svol"
-path="res://.godot/imported/1.png-e1057733412b6ab4f0e6eee4e0468416.ctex"
+uid="uid://h52013grp4gt"
+path="res://.godot/imported/6.png-081aeab3b30acdad76f7550b562a720f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/alien_idle_left/1.png"
-dest_files=["res://.godot/imported/1.png-e1057733412b6ab4f0e6eee4e0468416.ctex"]
+source_file="res://sprites/alien_walk/6.png"
+dest_files=["res://.godot/imported/6.png-081aeab3b30acdad76f7550b562a720f.ctex"]
 
 [params]
 
