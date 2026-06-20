@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bijdlicagh0xt"]
 
-[ext_resource type="Script" uid="uid://58knxflb8cyr" path="res://scripts/Enemy.gd" id="1_mpr68"]
-[ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://scripts/lunar.jpg" id="2_ft8do"]
-[ext_resource type="Script" uid="uid://obpvb883xxxf" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
+[ext_resource type="Script" uid="uid://bppjlmdtldsn" path="res://scripts/Enemy.gd" id="1_mpr68"]
+[ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://sprites/lunar.jpg" id="2_ft8do"]
+[ext_resource type="Script" uid="uid://dglduyiherakp" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
 size = Vector2(54, 48)

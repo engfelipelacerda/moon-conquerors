@@ -5,7 +5,7 @@ const GRAVITY = 1200.0
 const FIRE_RATE = 0.15
 @onready var muzzle = $Muzzle
 
-var bullet_scene = preload("res://scenes/Bullet.tscn")
+var bullet_scene = preload("res://entities/Bullet.tscn")
 var fire_timer = 0.0
 
 func _ready():

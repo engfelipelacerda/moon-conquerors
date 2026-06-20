@@ -1,17 +1,14 @@
 [gd_scene format=3 uid="uid://cou51dfsfd44o"]
 
-[ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://scenes/Player.tscn" id="1_elqb8"]
-[ext_resource type="Script" uid="uid://eqxwyox4o8vl" path="res://scripts/Game.gd" id="1_vcsgt"]
-[ext_resource type="PackedScene" uid="uid://bijdlicagh0xt" path="res://scenes/Enemy.tscn" id="5_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://entities/Player.tscn" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://cxnwsh2ap5eg7" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://bijdlicagh0xt" path="res://entities/Enemy.tscn" id="5_vcsgt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnwvq"]
 size = Vector2(1152, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
 size = Vector2(2, 432.16248)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvslj"]
-size = Vector2(100, 100)
 
 [node name="Main" type="Node2D" unique_id=817526930]
 script = ExtResource("1_vcsgt")
@@ -46,21 +43,5 @@ shape = SubResource("RectangleShape2D_elqb8")
 position = Vector2(0, 383.08124)
 shape = SubResource("RectangleShape2D_elqb8")
 
-[node name="Target" type="StaticBody2D" parent="." unique_id=917376948]
-collision_layer = 2
-collision_mask = 21
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Target" unique_id=2036889198]
-position = Vector2(487, 273)
-shape = SubResource("RectangleShape2D_rvslj")
-
-[node name="ColorRect" type="ColorRect" parent="Target" unique_id=2145555227]
-offset_left = 442.0
-offset_top = 233.0
-offset_right = 532.0
-offset_bottom = 308.0
-color = Color(0.87741095, 8.085966e-06, 0.5671025, 1)
-
 [node name="Enemy" parent="." unique_id=1824610519 instance=ExtResource("5_vcsgt")]
 position = Vector2(676, 259)
-

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b54ut8v36ehl0"]
+
+[ext_resource type="Script" uid="uid://ctmri4xmnbuku" path="res://scripts/Player.gd" id="1_p0vlq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh0f6"]
+radius = 11.0
+height = 34.0
+
+[node name="Player" type="CharacterBody2D" unique_id=134217823]
+position = Vector2(1000, 569)
+collision_mask = 18
+script = ExtResource("1_p0vlq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504036690]
+position = Vector2(0, -30)
+shape = SubResource("CapsuleShape2D_eh0f6")
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=1408660936]
+position = Vector2(0, -54)

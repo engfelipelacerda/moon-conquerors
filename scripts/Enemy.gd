@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var hovering_height = 150;
 
 @export var fire_interval = 2
-var bullet_scene = preload("res://scenes/Bullet.tscn")
+var bullet_scene = preload("res://entities/Bullet.tscn")
 var can_shoot := true;
 
 var angle = 0;

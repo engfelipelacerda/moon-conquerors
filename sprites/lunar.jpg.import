@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://chw4chee82m68"
-path="res://.godot/imported/lunar.jpg-52a310a04d6cd86d7949e2120469f8a9.ctex"
+path="res://.godot/imported/lunar.jpg-100e22f18911b590fd61865ae26b1c7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/lunar.jpg"
-dest_files=["res://.godot/imported/lunar.jpg-52a310a04d6cd86d7949e2120469f8a9.ctex"]
+source_file="res://sprites/lunar.jpg"
+dest_files=["res://.godot/imported/lunar.jpg-100e22f18911b590fd61865ae26b1c7b.ctex"]
 
 [params]
 
