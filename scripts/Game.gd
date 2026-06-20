@@ -1,11 +1,11 @@
 extends Node2D
 
-var player: CharacterBody2D = null;
-# Called when the node enters the scene tree for the first time.
+# Armazena a instância atual do jogador para que inimigos,
+# spawners e outros sistemas possam acessá-la facilmente.
+var player: CharacterBody2D = null
+
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
