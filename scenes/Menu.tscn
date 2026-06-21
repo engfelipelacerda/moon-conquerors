@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ytmnyct44s07"]
+
+[ext_resource type="Script" uid="uid://0tun8ni7a672" path="res://scripts/Menu.gd" id="1_xdvgc"]
+[ext_resource type="Texture2D" uid="uid://dih4b1lq4tgv" path="res://sprites/backgroundMenu.png" id="2_upctu"]
+
+[node name="MainMenu" type="Control" unique_id=1912692540]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 488.0
+offset_top = 280.0
+offset_right = 528.0
+offset_bottom = 320.0
+script = ExtResource("1_xdvgc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=258678145]
+layout_mode = 0
+offset_left = -488.0
+offset_top = -280.0
+offset_right = 664.0
+offset_bottom = 368.0
+texture = ExtResource("2_upctu")
+
+[node name="Label" type="Label" parent="." unique_id=1634086753]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 11.0
+offset_right = 139.0
+offset_bottom = 34.0
+text = "Moon Conquerors"
+
+[node name="Button" type="Button" parent="." unique_id=1248638726]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 67.0
+offset_right = 91.0
+offset_bottom = 98.0
+text = "Jogar"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

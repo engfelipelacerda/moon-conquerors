@@ -434,7 +434,11 @@ pattern_0 = SubResource("TileMapPattern_wp0k4")
 script = ExtResource("1_vcsgt")
 
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
+<<<<<<< HEAD
 position = Vector2(109, 264)
+=======
+position = Vector2(1398, 523)
+>>>>>>> origin/main
 
 [node name="Enemy" parent="." unique_id=1824610519 instance=ExtResource("5_vcsgt")]
 position = Vector2(425, 126)

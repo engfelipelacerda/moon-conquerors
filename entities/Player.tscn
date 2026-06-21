@@ -89,7 +89,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=134217823]
-position = Vector2(1000, 569)
+position = Vector2(1494, 415)
 collision_mask = 18
 script = ExtResource("1_p0vlq")
 
@@ -107,3 +107,10 @@ sprite_frames = SubResource("SpriteFrames_7qicf")
 animation = &"alien_idle"
 autoplay = "alien_idle"
 frame_progress = 0.4680297
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1622816662]
+limit_left = 0
+limit_top = 0
+limit_right = 2817
+limit_bottom = 648
+position_smoothing_enabled = true
