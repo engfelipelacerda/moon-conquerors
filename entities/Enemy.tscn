@@ -53,7 +53,7 @@ script = ExtResource("4_ft8do")
 position = Vector2(6.0000005, 16)
 scale = Vector2(0.36759436, 0.36759436)
 sprite_frames = SubResource("SpriteFrames_im3kb")
-frame_progress = 0.525589
+frame_progress = 0.22018397
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1729372664]
 collision_layer = 5

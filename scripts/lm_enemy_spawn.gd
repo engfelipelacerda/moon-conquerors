@@ -15,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var lm_enemies = get_tree().get_nodes_in_group("lm_enemies")
 	
-	if lm_enemies.size() < 5:
+	if lm_enemies.size() < 3:
 		spawn_enemy()
 		
 func spawn_enemy():
@@ -29,7 +29,7 @@ func spawn_enemy():
 	config.stopping_distance = 180
 	config.hovering_height = 150
 	config.fire_interval = 2 
-	config.enemy_damage = 5
+	config.enemy_damage = 2
 	enemy.setup(config)
 	
 

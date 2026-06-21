@@ -9,6 +9,7 @@ extends CharacterBody2D
 # Configurações de ataque
 @export var fire_interval = 2
 @export var enemy_damage = 30
+@export var shooting_distance = 500
 
 var bullet_scene = preload("res://entities/Bullet.tscn")
 @onready var animation = $AnimatedSprite2D
@@ -53,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	if can_shoot:
+	if can_shoot and Game.player.global_position.distance_to(global_position) < shooting_distance :
 		shoot(Game.player)
 
 	
