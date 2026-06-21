@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cou51dfsfd44o"]
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://entities/Player.tscn" id="1_elqb8"]
-[ext_resource type="Script" uid="uid://cbnx70kd617rb" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="Script" uid="uid://cxnwsh2ap5eg7" path="res://scripts/Game.gd" id="1_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://dow8keu7x0ddu" path="res://tiles/Cave Tileset/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" id="4_rarhs"]
 [ext_resource type="Texture2D" uid="uid://d32ro1wax7gte" path="res://tiles/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="5_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwyj1x8sn38ou" path="res://tiles/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="6_q8u5g"]
@@ -488,21 +488,35 @@ texture = ExtResource("6_q8u5g")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mwfav"]
 texture = ExtResource("7_lhr70")
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0 = 0
-4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 4:1/0/physics_layer_0/polygon_0/one_way = true
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3p2gp"]
@@ -571,7 +585,8 @@ texture = ExtResource("9_qmy6f")
 17:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_s7rlf"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 64
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_bjd11")
 sources/1 = SubResource("TileSetAtlasSource_qmy6f")
 sources/2 = SubResource("TileSetAtlasSource_mwfav")
@@ -606,8 +621,8 @@ sources/0 = SubResource("TileSetAtlasSource_cvmbd")
 script = ExtResource("1_vcsgt")
 
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
-position = Vector2(152, 442)
-collision_mask = 56
+position = Vector2(1210, 194)
+collision_mask = 120
 
 [node name="Map" type="TileMapLayer" parent="." unique_id=1857844841]
 position = Vector2(-173, 4)
@@ -622,17 +637,6 @@ tile_set = SubResource("TileSet_s7rlf")
 [node name="lm_enemy_spawn" type="Node2D" parent="." unique_id=714785751]
 position = Vector2(1133, -148)
 script = ExtResource("9_q8u5g")
-
-[node name="Target" type="StaticBody2D" parent="." unique_id=917376948]
-collision_layer = 2
-collision_mask = 21
-
-[node name="ColorRect" type="ColorRect" parent="Target" unique_id=2145555227]
-offset_left = 442.0
-offset_top = 233.0
-offset_right = 532.0
-offset_bottom = 308.0
-color = Color(0.87741095, 8.085966e-06, 0.5671025, 1)
 
 [node name="ParedeEsquerda" type="StaticBody2D" parent="." unique_id=1395626288]
 collision_layer = 32

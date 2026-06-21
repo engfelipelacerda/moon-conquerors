@@ -15,6 +15,10 @@ run/main_scene="uid://ytmnyct44s07"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*uid://cxnwsh2ap5eg7"
+
 [input]
 
 ui_accept={
@@ -52,6 +56,7 @@ shoot={
 2d_physics/layer_4="EnemyBullet"
 2d_physics/layer_5="World"
 2d_physics/layer_6="ParedesInvisiveis"
+2d_physics/layer_7="Decoracoes"
 
 [physics]
 
