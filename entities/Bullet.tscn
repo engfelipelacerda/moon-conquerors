@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c6lm2i2vf2kmh"]
 
-[ext_resource type="Script" uid="uid://nm20n034c0lo" path="res://scripts/Bullet.gd" id="1_hf8mt"]
+[ext_resource type="Script" uid="uid://bp5snybr61mda" path="res://scripts/Bullet.gd" id="1_hf8mt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
-size = Vector2(10, 5)
+size = Vector2(20, 19)
 
 [node name="Bullet" type="Area2D" unique_id=1461445268]
 collision_layer = 4
-collision_mask = 18
+collision_mask = 6
 script = ExtResource("1_hf8mt")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1552883848]
@@ -18,9 +18,11 @@ offset_bottom = 2.5
 color = Color(0.9358837, 0.49708837, 5.7756904e-07, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1595381328]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_2ropf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1945426354]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

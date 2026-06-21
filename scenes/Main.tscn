@@ -2,13 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://entities/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://wktywiooeyt0" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="Script" uid="uid://dfcre0hxg1c2v" path="res://scripts/lm_enemy_spawn.gd" id="9_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://dow8keu7x0ddu" path="res://tiles/Cave Tileset/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" id="4_rarhs"]
 [ext_resource type="Texture2D" uid="uid://d32ro1wax7gte" path="res://tiles/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="5_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwyj1x8sn38ou" path="res://tiles/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="6_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://vfcvnjrl7bsx" path="res://tiles/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="7_lhr70"]
 [ext_resource type="Texture2D" uid="uid://cwieqy87ok3fg" path="res://tiles/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="8_wp0k4"]
-[ext_resource type="Script" uid="uid://dfcre0hxg1c2v" path="res://scripts/lm_enemy_spawn.gd" id="9_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://cbpeb4boxrd56" path="res://tiles/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_qmy6f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
+size = Vector2(2, 432.16248)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_rarhs"]
 tile_data = PackedInt32Array(0, 1703936, 11, 1, 1769472, 11, 2, 1835008, 11)
@@ -442,3 +445,27 @@ tile_set = SubResource("TileSet_s7rlf")
 [node name="lm_enemy_spawn" type="Node2D" parent="." unique_id=714785751]
 position = Vector2(1505, 0)
 script = ExtResource("9_q8u5g")
+
+[node name="Colisão Invisível" type="StaticBody2D" parent="." unique_id=419536920]
+disable_mode = 2
+
+[node name="Parede Direita" type="CollisionShape2D" parent="Colisão Invisível" unique_id=1517080303]
+position = Vector2(1153, 383)
+shape = SubResource("RectangleShape2D_elqb8")
+
+[node name="Parede Esquerda" type="CollisionShape2D" parent="Colisão Invisível" unique_id=316849795]
+position = Vector2(0, 383.08124)
+shape = SubResource("RectangleShape2D_elqb8")
+
+
+[node name="Target" type="StaticBody2D" parent="." unique_id=917376948]
+collision_layer = 2
+collision_mask = 21
+
+[node name="ColorRect" type="ColorRect" parent="Target" unique_id=2145555227]
+offset_left = 442.0
+offset_top = 233.0
+offset_right = 532.0
+offset_bottom = 308.0
+color = Color(0.87741095, 8.085966e-06, 0.5671025, 1)
+

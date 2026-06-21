@@ -63,6 +63,13 @@ func shoot():
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 
+
+	# Configuração da bala	
+	var config = BulletConfig.new()
+	config.damage = 35
+	config.faction_owner = Factions.Type.PLAYER
+	bullet.setup(config)
+	
 	var mouse_pos = get_global_mouse_position()
 	bullet.global_position = muzzle.global_position
 

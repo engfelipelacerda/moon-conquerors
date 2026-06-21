@@ -23,6 +23,15 @@ func spawn_enemy():
 	get_parent().add_child(enemy)
 	enemy.global_position = get_random_spawn_point()
 	
+	var config = EnemyConfig.new()
+	config.speed = 80
+	config.speed_rotation = 2
+	config.stopping_distance = 180
+	config.hovering_height = 150
+	config.fire_interval = 2 
+	config.enemy_damage = 5
+	enemy.setup(config)
+	
 
 func get_random_spawn_point() -> Vector2:
 	var point = Vector2.ZERO

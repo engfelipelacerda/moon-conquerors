@@ -8,19 +8,35 @@ extends CharacterBody2D
 
 # Configurações de ataque
 @export var fire_interval = 2
-var bullet_scene = preload("res://entities/Bullet.tscn")
-var can_shoot := true
+@export var enemy_damage = 30
 
+var bullet_scene = preload("res://entities/Bullet.tscn")
+
+
+var can_shoot := true
 var angle = 0
 
 # Estratégia de movimentação do inimigo
 @export var enemy_movement: EnemyMovement
+# Saúde do inimigo
+@export var enemy_health:CharacterHealth
+
+func setup(config:EnemyConfig):
+	speed = config.speed;
+	speed_rotation = config.speed_rotation;
+	stopping_distance = config.stopping_distance;
+	hovering_height = config.hovering_height;
+	fire_interval = config.fire_interval
+	enemy_damage = config.enemy_damage
 
 func _ready() -> void:
 	# Adiciona o inimigo ao grupo de inimigos
 	add_to_group("lm_enemies")
 
 func _physics_process(delta: float) -> void:
+	if Game.player == null:
+		return
+
 	# Calcula a direção desejada de movimento
 	var steering_force = enemy_movement.move_vector()
 	var movement = steering_force * speed
@@ -35,17 +51,27 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if can_shoot:
-		pass
+		shoot(Game.player)
 
-func shoot(direction):
+	
+func shoot(target):
+	var direction = (target.global_position - global_position).normalized()
+
 	# Impede disparos contínuos
 	can_shoot = false
 
 	# Cria e posiciona o projétil
 	var bullet = bullet_scene.instantiate()
-	get_parent().add_child(bullet)
 	bullet.global_position = global_position
 
+	get_parent().add_child(bullet)
+
+	# Configura bala
+	var config = BulletConfig.new()
+	config.faction_owner = Factions.Type.ENEMY
+	config.damage = enemy_damage
+	bullet.setup(config)
+	
 	# Define a direção do disparo
 	bullet.direction = direction
 
