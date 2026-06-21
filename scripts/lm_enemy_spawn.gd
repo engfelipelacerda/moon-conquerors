@@ -4,7 +4,7 @@ extends Node2D
 @export var min_x_position:float = 0
 @export var max_x_position:float = 1153.0
 
-var lm_enemy = preload("res://scenes/Enemy.tscn")
+var lm_enemy = preload("res://entities/Enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
