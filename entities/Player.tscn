@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b54ut8v36ehl0"]
 
-[ext_resource type="Script" uid="uid://ctmri4xmnbuku" path="res://scripts/Player.gd" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://b8rly7woa1w0m" path="res://scripts/Player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle/1.png" id="2_7qicf"]
 [ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle/2.png" id="3_kqo1p"]
 [ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle/3.png" id="4_5q58l"]
