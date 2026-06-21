@@ -15,10 +15,6 @@ run/main_scene="uid://ytmnyct44s07"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Game="*uid://cbnx70kd617rb"
-
 [input]
 
 ui_accept={
