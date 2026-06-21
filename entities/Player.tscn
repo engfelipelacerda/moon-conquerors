@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctmri4xmnbuku" path="res://scripts/Player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle/1.png" id="2_7qicf"]
-[ext_resource type="Script" uid="uid://by3akvg4v52uu" path="res://scripts/hurtbox.gd" id="2_v6fml"]
+[ext_resource type="Script" uid="uid://by3akvg4v52uu" path="res://scripts/hitbox.gd" id="2_v6fml"]
 [ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="3_3li8b"]
 [ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle/2.png" id="3_kqo1p"]
 [ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle/3.png" id="4_5q58l"]
@@ -95,7 +95,7 @@ size = Vector2(48, 52)
 
 [node name="Player" type="CharacterBody2D" unique_id=134217823]
 position = Vector2(1494, 415)
-collision_mask = 24
+collision_mask = 48
 script = ExtResource("1_p0vlq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=504036690]
@@ -122,13 +122,13 @@ limit_right = 2817
 limit_bottom = 648
 position_smoothing_enabled = true
 
-[node name="hurtbox" type="Area2D" parent="." unique_id=600503771]
+[node name="hitboxPlayer" type="Area2D" parent="." unique_id=600503771]
 position = Vector2(-2, 14)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 128
+collision_mask = 8
 script = ExtResource("2_v6fml")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1987246005]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitboxPlayer" unique_id=1987246005]
 light_mask = 5
 visibility_layer = 5
 position = Vector2(4, -27)
@@ -137,3 +137,4 @@ shape = SubResource("RectangleShape2D_v6fml")
 [node name="health" type="Node2D" parent="." unique_id=436067684]
 position = Vector2(4, -29)
 script = ExtResource("3_3li8b")
+is_player = true

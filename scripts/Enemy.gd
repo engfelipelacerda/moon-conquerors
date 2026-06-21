@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export var enemy_damage = 30
 @export var shooting_distance = 500
 
-var bullet_scene = preload("res://entities/Bullet.tscn")
+var bullet_scene = preload("res://entities/EnemyBullet.tscn")
 @onready var animation = $AnimatedSprite2D
 
 var can_shoot := true

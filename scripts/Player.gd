@@ -2,7 +2,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var lava: TileMapLayer = $"../Lava"
 @onready var health: CharacterHealth = $health
-@onready var collision_shape_2d: CollisionShape2D = $hurtbox/CollisionShape2D
+@onready var collision_shape_2d: CollisionShape2D = $hitboxPlayer/CollisionShape2D
 
 # Constantes de movimentação e combate
 const SPEED = 300.0
@@ -84,10 +84,7 @@ func shoot():
 
 func verificar_lava():
 	var pe = collision_shape_2d.global_position
-
 	var pos_tile = lava.local_to_map(lava.to_local(pe))
 	var tile_data = lava.get_cell_tile_data(pos_tile)
-
 	if tile_data and tile_data.get_custom_data("kill"):
-		print("LAVA!")
 		health.die()

@@ -3,6 +3,7 @@ class_name CharacterHealth
 
 @export var max_health = 100
 var health:float
+@export var is_player := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,4 +21,9 @@ func damage(hit_value:float):
 	
 
 func die():
-	get_parent().queue_free()
+	if is_player:
+		var game_over = preload("res://scenes/GameOver.tscn").instantiate()
+		get_tree().current_scene.add_child(game_over)
+		get_tree().paused = true
+	else:
+		get_parent().queue_free()

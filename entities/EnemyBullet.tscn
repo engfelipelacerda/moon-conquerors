@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://c6lm2i2vf2kmh"]
+[gd_scene format=3 uid="uid://cxwk86pgir54l"]
 
-[ext_resource type="Script" uid="uid://dfhw1hxngm8j1" path="res://scripts/Bullet.gd" id="1_hf8mt"]
+[ext_resource type="Script" uid="uid://dfhw1hxngm8j1" path="res://scripts/Bullet.gd" id="1_6ro31"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ropf"]
 size = Vector2(20, 19)
 
 [node name="Bullet" type="Area2D" unique_id=1461445268]
-collision_layer = 4
-collision_mask = 272
-script = ExtResource("1_hf8mt")
+collision_layer = 8
+collision_mask = 144
+script = ExtResource("1_6ro31")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1552883848]
 offset_left = -5.0

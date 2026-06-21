@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dksv6r62kkdpg"]
+
+[ext_resource type="Script" uid="uid://cncyadgwde7sj" path="res://scripts/GameOver.gd" id="1_6bcno"]
+
+[node name="GameOver" type="Control" unique_id=1522555268]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6bcno")
+
+[node name="Panel" type="Panel" parent="." unique_id=992921436]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 0
+offset_left = 699.0
+offset_top = 216.0
+offset_right = 1099.0
+offset_bottom = 466.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=328396409]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -85.0
+offset_right = 150.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1213461467]
+layout_mode = 2
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RetryButton" type="Button" parent="Panel/VBoxContainer" unique_id=1453957761]
+custom_minimum_size = Vector2(250, 50)
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 2
+text = "Jogar Novamente"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer" unique_id=335540725]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+text = "Sair"
+
+[connection signal="pressed" from="Panel/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

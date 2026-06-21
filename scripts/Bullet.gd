@@ -26,10 +26,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 func _on_body_entered(body):
 	queue_free()
-	pass # Replace with function body.
+	pass
 
-func _on_area_entered(area:Area2D):
-	if area is Hurtbox:
+func _on_area_entered(area):
+	if area is Hitbox:
 		if area.faction != faction_owner:
 			area.receive_hit(damage)
-		
+			queue_free()

@@ -57,6 +57,8 @@ shoot={
 2d_physics/layer_5="World"
 2d_physics/layer_6="ParedesInvisiveis"
 2d_physics/layer_7="Decoracoes"
+2d_physics/layer_8="HitBoxPlayer"
+2d_physics/layer_9="HitBoxEnemy"
 
 [physics]
 
