@@ -1,5 +1,8 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var lava: TileMapLayer = $"../Lava"
+@onready var health: CharacterHealth = $health
+@onready var collision_shape_2d: CollisionShape2D = $hurtbox/CollisionShape2D
 
 # Constantes de movimentação e combate
 const SPEED = 300.0
@@ -48,6 +51,7 @@ func _physics_process(delta):
 		animated_sprite_2d.play("alien_jump")
 
 	move_and_slide()
+	verificar_lava()
 
 	# Disparo automático com intervalo definido
 	fire_timer -= delta
@@ -77,3 +81,13 @@ func shoot():
 	var dir = (mouse_pos - muzzle.global_position).normalized()
 	bullet.direction = dir
 	bullet.rotation = dir.angle()
+
+func verificar_lava():
+	var pe = collision_shape_2d.global_position
+
+	var pos_tile = lava.local_to_map(lava.to_local(pe))
+	var tile_data = lava.get_cell_tile_data(pos_tile)
+
+	if tile_data and tile_data.get_custom_data("kill"):
+		print("LAVA!")
+		health.die()
