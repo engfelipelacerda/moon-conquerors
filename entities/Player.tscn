@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://b54ut8v36ehl0"]
 
 [ext_resource type="Script" uid="uid://b8rly7woa1w0m" path="res://scripts/Player.gd" id="1_p0vlq"]
-[ext_resource type="Script" uid="uid://dcwbr6fi5equ" path="res://scripts/hurtbox.gd" id="2_v6fml"]
-[ext_resource type="Script" uid="uid://4odarfx8csk4" path="res://scripts/character_health.gd" id="3_3li8b"]
-
 [ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle/1.png" id="2_7qicf"]
+[ext_resource type="Script" uid="uid://capn7msiwtgqy" path="res://scripts/hurtbox.gd" id="2_v6fml"]
+[ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="3_3li8b"]
 [ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle/2.png" id="3_kqo1p"]
 [ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle/3.png" id="4_5q58l"]
 [ext_resource type="Texture2D" uid="uid://bgksounfpoxxu" path="res://sprites/alien_idle/4.png" id="5_n5o1f"]
@@ -20,9 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://drqi6hfgfxk4m" path="res://sprites/alien_walk/4.png" id="11_n5o1f"]
 [ext_resource type="Texture2D" uid="uid://b1ymbstu07yxx" path="res://sprites/alien_walk/5.png" id="12_i1xi8"]
 [ext_resource type="Texture2D" uid="uid://h52013grp4gt" path="res://sprites/alien_walk/6.png" id="13_5dkxs"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fml"]
-size = Vector2(43, 62)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eh0f6"]
 radius = 22.0
@@ -93,6 +89,9 @@ animations = [{
 "name": &"alien_walk",
 "speed": 10.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6fml"]
+size = Vector2(43, 62)
 
 [node name="Player" type="CharacterBody2D" unique_id=134217823]
 position = Vector2(1494, 415)

@@ -2,16 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://entities/Player.tscn" id="1_elqb8"]
 [ext_resource type="Script" uid="uid://wktywiooeyt0" path="res://scripts/Game.gd" id="1_vcsgt"]
-[ext_resource type="Script" uid="uid://dfcre0hxg1c2v" path="res://scripts/lm_enemy_spawn.gd" id="9_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://dow8keu7x0ddu" path="res://tiles/Cave Tileset/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" id="4_rarhs"]
 [ext_resource type="Texture2D" uid="uid://d32ro1wax7gte" path="res://tiles/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="5_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwyj1x8sn38ou" path="res://tiles/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="6_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://vfcvnjrl7bsx" path="res://tiles/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="7_lhr70"]
 [ext_resource type="Texture2D" uid="uid://cwieqy87ok3fg" path="res://tiles/Seasonal Tilesets/5 - Misc. universal tiles/Rock_shape (16 x 16).png" id="8_wp0k4"]
+[ext_resource type="Script" uid="uid://dfcre0hxg1c2v" path="res://scripts/lm_enemy_spawn.gd" id="9_q8u5g"]
 [ext_resource type="Texture2D" uid="uid://cbpeb4boxrd56" path="res://tiles/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="9_qmy6f"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_elqb8"]
-size = Vector2(2, 432.16248)
+[ext_resource type="Texture2D" uid="uid://cctay4lk8poll" path="res://tiles/background/Background.png" id="10_lhr70"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_rarhs"]
 tile_data = PackedInt32Array(0, 1703936, 11, 1, 1769472, 11, 2, 1835008, 11)
@@ -545,6 +543,18 @@ size = Vector2(2, 648)
 [node name="Main" type="Node2D" unique_id=817526930]
 script = ExtResource("1_vcsgt")
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=816941731]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1114759081]
+position = Vector2(600, 0)
+motion_scale = Vector2(0, 0)
+motion_offset = Vector2(-619, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=650004141]
+scale = Vector2(0.74, 0.74)
+texture = ExtResource("10_lhr70")
+centered = false
+
 [node name="Player" parent="." unique_id=1162943036 instance=ExtResource("1_elqb8")]
 position = Vector2(1197, 382)
 collision_mask = 56
@@ -559,7 +569,7 @@ position = Vector2(26, 0)
 tile_set = SubResource("TileSet_s7rlf")
 
 [node name="lm_enemy_spawn" type="Node2D" parent="." unique_id=714785751]
-position = Vector2(1505, 0)
+position = Vector2(1133, -148)
 script = ExtResource("9_q8u5g")
 
 [node name="Target" type="StaticBody2D" parent="." unique_id=917376948]
@@ -589,4 +599,3 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ParedeDireita" unique_id=1439649838]
 position = Vector2(0, 324)
 shape = SubResource("RectangleShape2D_lhr70")
-

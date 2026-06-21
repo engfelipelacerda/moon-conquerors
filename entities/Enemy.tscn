@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bppjlmdtldsn" path="res://scripts/Enemy.gd" id="1_mpr68"]
 [ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://sprites/lunar.jpg" id="2_ft8do"]
 [ext_resource type="Script" uid="uid://dant437akj3ub" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
-[ext_resource type="Script" uid="uid://4odarfx8csk4" path="res://scripts/character_health.gd" id="4_ft8do"]
-[ext_resource type="Script" uid="uid://dcwbr6fi5equ" path="res://scripts/hurtbox.gd" id="5_5wwv6"]
+[ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="4_ft8do"]
+[ext_resource type="Script" uid="uid://capn7msiwtgqy" path="res://scripts/hurtbox.gd" id="5_5wwv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpr68"]
 radius = 27.0
