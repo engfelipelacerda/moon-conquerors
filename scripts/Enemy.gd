@@ -11,7 +11,7 @@ extends CharacterBody2D
 @export var enemy_damage = 30
 
 var bullet_scene = preload("res://entities/Bullet.tscn")
-
+@onready var animation = $AnimatedSprite2D
 
 var can_shoot := true
 var angle = 0
@@ -36,7 +36,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if Game.player == null:
 		return
-
+	
+	# Toca a animação
+	animation.play()
+	
 	# Calcula a direção desejada de movimento
 	var steering_force = enemy_movement.move_vector()
 	var movement = steering_force * speed

@@ -1,13 +1,32 @@
 [gd_scene format=3 uid="uid://c0jkjufij4pyy"]
 
 [ext_resource type="Script" uid="uid://bppjlmdtldsn" path="res://scripts/Enemy.gd" id="1_mpr68"]
-[ext_resource type="Texture2D" uid="uid://chw4chee82m68" path="res://sprites/lunar.jpg" id="2_ft8do"]
 [ext_resource type="Script" uid="uid://dant437akj3ub" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
+[ext_resource type="Texture2D" uid="uid://63i2iyh6uin4" path="res://sprites/lm_enemy/lm1.png" id="4_dsp8k"]
 [ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="4_ft8do"]
 [ext_resource type="Script" uid="uid://capn7msiwtgqy" path="res://scripts/hurtbox.gd" id="5_5wwv6"]
+[ext_resource type="Texture2D" uid="uid://mn5y0nra44d6" path="res://sprites/lm_enemy/lm3.png" id="5_66spp"]
+[ext_resource type="Texture2D" uid="uid://d1d32mh28ai2s" path="res://sprites/lm_enemy/lm2.png" id="6_5g4gd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mpr68"]
-radius = 27.0
+radius = 33.01515
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_im3kb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dsp8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_66spp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5g4gd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwv6"]
 size = Vector2(43, 35)
@@ -20,22 +39,6 @@ enemy_movement = NodePath("enemy-movement")
 position = Vector2(7, 4)
 shape = SubResource("CircleShape2D_mpr68")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1796950900]
-offset_left = -20.0
-offset_top = -21.0
-offset_right = 20.0
-offset_bottom = 19.0
-scale = Vector2(1.3639168, 1.2398183)
-color = Color(0.7372549, 0, 0.08235294, 1)
-
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1840533772]
-offset_left = -18.0
-offset_top = -18.0
-offset_right = 46.0
-offset_bottom = 46.0
-scale = Vector2(0.7599902, 0.68)
-texture = ExtResource("2_ft8do")
-
 [node name="enemy-movement" type="Node2D" parent="." unique_id=636586133]
 script = ExtResource("3_5wwv6")
 
@@ -45,6 +48,12 @@ target_position = Vector2(-8, 765)
 
 [node name="health" type="Node2D" parent="." unique_id=916408638]
 script = ExtResource("4_ft8do")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=223467777]
+position = Vector2(6.0000005, 16)
+scale = Vector2(0.36759436, 0.36759436)
+sprite_frames = SubResource("SpriteFrames_im3kb")
+frame_progress = 0.525589
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=1729372664]
 collision_layer = 5
