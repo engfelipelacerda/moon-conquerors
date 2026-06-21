@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 # Constantes de movimentação e combate
 const SPEED = 300.0
-const JUMP_VELOCITY = -350.0
-const GRAVITY = 1200.0
+const JUMP_VELOCITY = -500.0
+const GRAVITY = 1000.0
 const FIRE_RATE = 0.15
 
 # Ponto de origem dos disparos
