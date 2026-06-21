@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://b54ut8v36ehl0"]
 
-[ext_resource type="Script" uid="uid://b8rly7woa1w0m" path="res://scripts/Player.gd" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://do0pnuqu1sdhe" path="res://scripts/Player.gd" id="1_p0vlq"]
 [ext_resource type="Texture2D" uid="uid://cj0j63rc1svol" path="res://sprites/alien_idle/1.png" id="2_7qicf"]
-[ext_resource type="Script" uid="uid://capn7msiwtgqy" path="res://scripts/hurtbox.gd" id="2_v6fml"]
+[ext_resource type="Script" uid="uid://by3akvg4v52uu" path="res://scripts/hurtbox.gd" id="2_v6fml"]
 [ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="3_3li8b"]
 [ext_resource type="Texture2D" uid="uid://bis5pjv236pit" path="res://sprites/alien_idle/2.png" id="3_kqo1p"]
 [ext_resource type="Texture2D" uid="uid://dxh4m34vx7771" path="res://sprites/alien_idle/3.png" id="4_5q58l"]
@@ -45,7 +45,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_5dkxs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alien_idle",
 "speed": 10.0
 }, {
@@ -62,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_732nv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alien_jump",
 "speed": 10.0
 }, {
@@ -85,7 +85,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("13_5dkxs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"alien_walk",
 "speed": 10.0
 }]
@@ -106,6 +106,7 @@ shape = SubResource("CapsuleShape2D_eh0f6")
 position = Vector2(4, -56)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=354282861]
+z_index = 1
 position = Vector2(4.0000286, -28.00001)
 scale = Vector2(1.7333317, 1.5249996)
 sprite_frames = SubResource("SpriteFrames_7qicf")

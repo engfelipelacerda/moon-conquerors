@@ -12,12 +12,12 @@ config_version=5
 
 config/name="Moon Conquerors"
 run/main_scene="uid://ytmnyct44s07"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Game="*uid://wktywiooeyt0"
+Game="*uid://cbnx70kd617rb"
 
 [input]
 
