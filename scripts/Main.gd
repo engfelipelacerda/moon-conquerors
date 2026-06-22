@@ -20,7 +20,8 @@ func _ready() -> void:
 func start_wave():
 	wave_number += 1
 	enemies_alive = 0
-	heal_player_on_wave_start()
+	if wave_number >= 1:
+		heal_player_on_wave_start()
 	var amount = calculate_enemy_count(wave_number)
 	enemies_remaining_to_spawn = amount
 	var config = build_enemy_config(wave_number)
