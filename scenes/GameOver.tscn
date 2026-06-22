@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://dksv6r62kkdpg"]
 
-[ext_resource type="Script" uid="uid://cncyadgwde7sj" path="res://scripts/GameOver.gd" id="1_6bcno"]
+[ext_resource type="Script" uid="uid://vfadjyhvwsqw" path="res://scripts/GameOver.gd" id="1_6bcno"]
 
-[node name="GameOver" type="Control" unique_id=1522555268]
+[node name="GameOver" type="CanvasLayer" unique_id=1414671747]
 process_mode = 2
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_6bcno")
 
 [node name="Panel" type="Panel" parent="." unique_id=992921436]
 custom_minimum_size = Vector2(400, 250)
-layout_mode = 0
-offset_left = 699.0
-offset_top = 216.0
-offset_right = 1099.0
-offset_bottom = 466.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -125.0
+offset_right = 200.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=328396409]
 layout_mode = 1

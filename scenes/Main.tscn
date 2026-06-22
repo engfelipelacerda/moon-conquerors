@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cou51dfsfd44o"]
 
 [ext_resource type="PackedScene" uid="uid://b54ut8v36ehl0" path="res://entities/Player.tscn" id="1_elqb8"]
-[ext_resource type="Script" uid="uid://cxnwsh2ap5eg7" path="res://scripts/Game.gd" id="1_vcsgt"]
+[ext_resource type="Script" uid="uid://cbnx70kd617rb" path="res://scripts/Game.gd" id="1_vcsgt"]
 [ext_resource type="Texture2D" uid="uid://dow8keu7x0ddu" path="res://tiles/Cave Tileset/Cave Tileset/Gray_Tile_Terrain (16 x 16).png" id="4_rarhs"]
 [ext_resource type="Texture2D" uid="uid://d32ro1wax7gte" path="res://tiles/Cave Tileset/Cave Tileset/Scaffolding_and_BG_Parts (16 x 16).png" id="5_jlsqs"]
 [ext_resource type="Texture2D" uid="uid://dwyj1x8sn38ou" path="res://tiles/Seasonal Tilesets/3 - Tropics/Tropics_entities (16 x 16).png" id="6_q8u5g"]
