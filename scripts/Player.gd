@@ -62,7 +62,7 @@ func shoot():
 	config.damage = bullet_damage
 	config.faction_owner = Factions.Type.PLAYER
 	bullet.setup(config)
-
+	bullet.modulate = Color(0, 1, 0)  # verde
 	var mouse_pos = get_global_mouse_position()
 	bullet.global_position = muzzle.global_position
 	var dir = (mouse_pos - muzzle.global_position).normalized()
