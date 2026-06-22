@@ -87,7 +87,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"kill",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwv6"]
@@ -117,7 +117,9 @@ script = ExtResource("4_ft8do")
 position = Vector2(7, 4.000004)
 scale = Vector2(0.43945304, 0.32638317)
 sprite_frames = SubResource("SpriteFrames_im3kb")
-animation = &"flying"
+animation = &"kill"
+frame = 7
+frame_progress = 1.0
 
 [node name="hitBoxEnemy" type="Area2D" parent="." unique_id=1729372664]
 collision_layer = 256

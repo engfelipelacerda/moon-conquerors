@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 Game="*uid://cbnx70kd617rb"
 
+[display]
+
+window/size/mode=2
+
 [input]
 
 ui_accept={
