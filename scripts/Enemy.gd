@@ -20,7 +20,7 @@ var angle = 0
 # Estratégia de movimentação do inimigo
 @export var enemy_movement: EnemyMovement
 # Saúde do inimigo
-@export var enemy_health:CharacterHealth
+@onready var enemy_health: CharacterHealth = $health
 
 func setup(config:EnemyConfig):
 	speed = config.speed;

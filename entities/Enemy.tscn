@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://c0jkjufij4pyy"]
 
-[ext_resource type="Script" uid="uid://bppjlmdtldsn" path="res://scripts/Enemy.gd" id="1_mpr68"]
-[ext_resource type="Script" uid="uid://dglduyiherakp" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
+[ext_resource type="Script" uid="uid://dthfhujjrs7h0" path="res://scripts/Enemy.gd" id="1_mpr68"]
+[ext_resource type="Script" uid="uid://bq2343qjp5lp5" path="res://scripts/enemy_movement.gd" id="3_5wwv6"]
 [ext_resource type="Texture2D" uid="uid://63i2iyh6uin4" path="res://sprites/lm_enemy/lm1.png" id="4_dsp8k"]
-[ext_resource type="Script" uid="uid://esl3ufoydujw" path="res://scripts/character_health.gd" id="4_ft8do"]
-[ext_resource type="Script" uid="uid://by3akvg4v52uu" path="res://scripts/hitbox.gd" id="5_5wwv6"]
+[ext_resource type="Script" uid="uid://kjijc6gaa4ns" path="res://scripts/character_health.gd" id="4_ft8do"]
+[ext_resource type="Script" uid="uid://b86312rwrqynx" path="res://scripts/hitbox.gd" id="5_5wwv6"]
 [ext_resource type="Texture2D" uid="uid://mn5y0nra44d6" path="res://sprites/lm_enemy/lm3.png" id="5_66spp"]
 [ext_resource type="Texture2D" uid="uid://d1d32mh28ai2s" path="res://sprites/lm_enemy/lm2.png" id="6_5g4gd"]
 

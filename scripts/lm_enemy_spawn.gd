@@ -1,37 +1,23 @@
 extends Node2D
 
-@export var max_amount_enemies:int = 5
+signal enemy_spawned(enemy)
+
 @export var min_x_position:float = 0
 @export var max_x_position:float = 1153.0
 
 var lm_enemy = preload("res://entities/Enemy.tscn")
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func spawn_wave(amount:int, config:EnemyConfig, interval:float) -> void:
+	for i in amount:
+		spawn_enemy(config)
+		await get_tree().create_timer(interval).timeout
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	var lm_enemies = get_tree().get_nodes_in_group("lm_enemies")
-	
-	if lm_enemies.size() < 3:
-		spawn_enemy()
-		
-func spawn_enemy():
+func spawn_enemy(config:EnemyConfig):
 	var enemy = lm_enemy.instantiate()
 	get_parent().add_child(enemy)
 	enemy.global_position = get_random_spawn_point()
-	
-	var config = EnemyConfig.new()
-	config.speed = 80
-	config.speed_rotation = 2
-	config.stopping_distance = 180
-	config.hovering_height = 150
-	config.fire_interval = 2 
-	config.enemy_damage = 2
 	enemy.setup(config)
-	
+	enemy_spawned.emit(enemy)
 
 func get_random_spawn_point() -> Vector2:
 	var point = Vector2.ZERO

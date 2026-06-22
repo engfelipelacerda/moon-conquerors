@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkmgq1w05kwn"]
+
+[ext_resource type="Script" uid="uid://c3dilmrcyyg22" path="res://scripts/Upgrade_Screen.gd" id="1_nlo6w"]
+
+[node name="UpdateScreen" type="CanvasLayer" unique_id=1414671747]
+process_mode = 2
+script = ExtResource("1_nlo6w")
+
+[node name="Control" type="Control" parent="." unique_id=1660699695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Control" unique_id=328396409]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
