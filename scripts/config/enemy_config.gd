@@ -1,6 +1,7 @@
 extends Node
 class_name EnemyConfig
 
+var enemy_health_amount: float = 100
 var speed = 80;
 var speed_rotation = 2;
 var stopping_distance = 180;

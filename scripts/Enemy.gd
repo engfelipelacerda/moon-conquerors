@@ -29,6 +29,8 @@ func setup(config:EnemyConfig):
 	hovering_height = config.hovering_height;
 	fire_interval = config.fire_interval
 	enemy_damage = config.enemy_damage
+	enemy_health.max_health = config.enemy_health_amount
+	enemy_health.health = config.enemy_health_amount
 
 func _ready() -> void:
 	# Adiciona o inimigo ao grupo de inimigos

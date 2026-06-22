@@ -14,11 +14,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptionsContainer" type="VBoxContainer" parent="Control" unique_id=328396409]
+[node name="CenterContainer" type="CenterContainer" parent="Control" unique_id=1467940748]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="Control/CenterContainer" unique_id=328396409]
+layout_mode = 2
 theme_override_constants/separation = 20

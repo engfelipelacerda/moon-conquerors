@@ -20,11 +20,18 @@ func _ready() -> void:
 func start_wave():
 	wave_number += 1
 	enemies_alive = 0
+	heal_player_on_wave_start()
 	var amount = calculate_enemy_count(wave_number)
 	enemies_remaining_to_spawn = amount
 	var config = build_enemy_config(wave_number)
 	var interval = get_spawn_interval(wave_number)
 	spawner.spawn_wave(amount, config, interval)
+
+func heal_player_on_wave_start():
+	var health_node = Game.player.health
+	var heal_amount = health_node.max_health * 0.3
+	health_node.health = min(health_node.health + heal_amount, health_node.max_health)
+	print("Player curado: ", health_node.health, " / ", health_node.max_health)
 
 func calculate_enemy_count(wave:int) -> int:
 	return 5 + wave * 2
@@ -40,6 +47,7 @@ func build_enemy_config(wave:int) -> EnemyConfig:
 	config.hovering_height = 150
 	config.fire_interval = max(0.5, 2.0 - wave * 0.1)
 	config.enemy_damage = 2 + wave
+	config.enemy_health_amount = 150 + wave * 15
 	return config
 
 func _on_enemy_spawned(enemy):
