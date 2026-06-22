@@ -144,33 +144,7 @@ if Game.player == null:
 
 1. Instale o Godot 4.7.
 2. Abra o projeto.
-3. Vá em:
-
-```text
-Project → Project Settings
-```
-
-4. Abra a aba:
-
-```text
-Globals
-```
-
-5. Verifique se o Singleton abaixo está configurado:
-
-```text
-Name: Game
-Path: scripts/Game.gd
-```
-
-6. Caso não exista:
-
-- Clique em Add.
-- Selecione `scripts/Game.gd`.
-- Nomeie como `Game`.
-- Clique em Add.
-
-7. Execute o projeto pressionando:
+3. Execute o projeto pressionando:
 
 ```text
 F5
