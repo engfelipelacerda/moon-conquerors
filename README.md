@@ -4,10 +4,10 @@ Projeto desenvolvido para o Trabalho Prático 2 da disciplina de Computação Gr
 
 ## Integrantes
 
-- Ruan Pereira
-- Luis Felipe
-- Pedro Rickson
-- Lucas Vieira
+- LUIS FELIPE PESSOA LACERDA
+- RUAN PEREIRA DO NASCIMENTO
+- PEDRO RICKSON FERNANDES ARAGAO
+- FRANCISCO LUCAS XAVIER MAPURUNGA VIEIRA
 
 ---
 
