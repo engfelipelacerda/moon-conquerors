@@ -76,7 +76,6 @@ Sobreviver ao maior tempo possível derrotando as naves inimigas e evitando ser 
 - Godot Engine 4.7
 - GDScript
 - OpenGL Compatibility Renderer
-- Jolt Physics
 
 ---
 
@@ -106,38 +105,6 @@ moon-conquerors/
 
 ---
 
-# Arquitetura
-
-O projeto utiliza um Singleton Global chamado `Game`.
-
-Este singleton é carregado automaticamente pela Godot através do sistema de Autoload.
-
-Configuração encontrada em:
-
-```ini
-[autoload]
-Game="*uid://cbnx70kd617rb"
-```
-
-Script principal:
-
-```gdscript
-extends Node2D
-
-var player: CharacterBody2D = null
-```
-
-O objetivo desse singleton é permitir que sistemas globais, inimigos e projéteis tenham acesso rápido à referência do jogador atual.
-
-Exemplo:
-
-```gdscript
-if Game.player == null:
-    return
-```
-
----
-
 # Como Executar
 
 ## Abrindo no Godot
@@ -149,6 +116,8 @@ if Game.player == null:
 ```text
 F5
 ```
+
+4. Ou rode pelo executável do jogo para seu respectivo SO.
 
 ---
 
